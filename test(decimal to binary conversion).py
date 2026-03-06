@@ -1,14 +1,13 @@
+# DECIMAL TO ANY BASE CONVERTER (BINARY, OCTAL, HEXADECIMAL, BASE 34, ANY BASE) BY VILLANUEVA R.S.B BS ECE 1B   
 def dec_to_base(num, base, precision=8):
     digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     
     if base < 2 or base > 35:
         return "Base not supported (2-35 only)."
-    
-    # Separate integer and fractional parts
+   
     int_part = int(num)
     frac_part = num - int_part
 
-    # --- Integer Conversion ---
     if int_part == 0:
         base_int = "0"
     else:
@@ -18,7 +17,6 @@ def dec_to_base(num, base, precision=8):
             base_int = digits[remainder] + base_int
             int_part //= base
 
-    # --- Fractional Conversion ---
     base_frac = ""
     count = 0
     while frac_part > 0 and count < precision:
